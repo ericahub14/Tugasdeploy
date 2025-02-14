@@ -11,12 +11,12 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #faf3e0;
+            background-color: #f4e9dd; /* Warna krem lembut */
         }
 
         .hero-section {
             padding: 50px 15px;
-            background-color: #fff8e7;
+            background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             max-width: 1200px;
@@ -25,20 +25,20 @@
 
         .hero-title {
             font-size: 2.5rem;
-            color: #5a3e1b;
+            color: #8B4513; /* Warna cokelat tanah */
             font-weight: bold;
             margin-bottom: 15px;
         }
 
         .hero-description {
             font-size: 1.2rem;
-            color: #705335;
+            color: #555;
             margin-bottom: 20px;
         }
 
         .hero-btn {
             display: inline-block;
-            background-color: #c0392b;
+            background-color: #D2691E; /* Warna cokelat kemerahan */
             color: #fff;
             padding: 10px 20px;
             border-radius: 5px;
@@ -48,7 +48,7 @@
         }
 
         .hero-btn:hover {
-            background-color: #992d21;
+            background-color: #A0522D; /* Warna cokelat lebih gelap */
         }
 
         .hero-image img {
@@ -62,7 +62,7 @@
             display: none;
             margin-top: 20px;
             font-size: 1rem;
-            color: #5a3e1b;
+            color: #333;
             animation: fadeIn 0.5s;
         }
 
@@ -92,6 +92,27 @@
                 max-height: 200px;
             }
         }
+
+        /* Style tambahan untuk tombol dan paragraf baru */
+        .change-text-btn {
+            background-color: #228B22; /* Warna hijau tua */
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .change-text-btn:hover {
+            background-color: #006400; /* Warna hijau lebih gelap */
+        }
+
+        #my-paragraph {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            color: #555;
+        }
     </style>
 </head>
 <body>
@@ -99,12 +120,17 @@
         <div class="hero-section row align-items-center">
             <!-- Text Section -->
             <div class="col-lg-6 col-md-6 col-12">
-                <h1 class="hero-title">Rendang, Hidangan Legendaris</h1>
-                <p class="hero-description">Nikmati kelezatan rendang khas Indonesia yang kaya akan rempah dan penuh cita rasa autentik!</p>
-                <button id="learn-more-btn" class="hero-btn">Learn More</button>
+                <h1 class="hero-title">Rendang: Kelezatan dari Sumatera Barat</h1>
+                <p class="hero-description">Daging yang dimasak dengan rempah kaya, menciptakan cita rasa yang tak terlupakan.</p>
+                <button id="learn-more-btn" class="hero-btn">Pelajari Lebih Lanjut</button>
                 <div class="extra-description" id="extra-description">
-                    <p>Rendang adalah hidangan tradisional dari Sumatera Barat yang dimasak perlahan menggunakan bumbu rempah pilihan. Cocok untuk sajian keluarga dan acara spesial!</p>
+                    <p>Rendang adalah hidangan daging yang kaya rempah dan berasal dari Sumatera Barat, Indonesia. Proses memasaknya yang lama menghasilkan daging yang empuk dan bumbu yang meresap sempurna. Sangat cocok dinikmati dengan nasi hangat!</p>
                 </div>
+
+                <!-- Tombol dan Paragraf Baru -->
+                <button id="change-text-btn" class="change-text-btn">Ubah Teks</button>
+                <p id="my-paragraph">Selamat Datang!</p>
+
             </div>
             <!-- Image Section -->
             <div class="hero-image col-lg-6 col-md-6 col-12 text-center">
@@ -122,11 +148,19 @@
         learnMoreBtn.addEventListener('click', () => {
             if (extraDescription.style.display === 'none' || extraDescription.style.display === '') {
                 extraDescription.style.display = 'block';
-                learnMoreBtn.textContent = 'Show Less';
+                learnMoreBtn.textContent = 'Tampilkan Sedikit';
             } else {
                 extraDescription.style.display = 'none';
-                learnMoreBtn.textContent = 'Learn More';
+                learnMoreBtn.textContent = 'Pelajari Lebih Lanjut';
             }
+        });
+
+        // Script untuk tombol dan paragraf baru
+        const changeTextBtn = document.getElementById('change-text-btn');
+        const myParagraph = document.getElementById('my-paragraph');
+
+        changeTextBtn.addEventListener('click', () => {
+            myParagraph.textContent = 'Rendang Memang Lezat!';
         });
     </script>
 </body>
